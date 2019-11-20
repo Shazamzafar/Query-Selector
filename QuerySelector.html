@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+    /*  Name:       Shazam Zafar  */
+    /*  Class:      JavaScript  */
+    /*  Date:       October 4 2019  */
+    /*  Project:    QuerySelector  */
+
+
+
+
+        /*class names always begin with a .   */
+        .ImportantStuff {
+            color: red;
+            font-family: Britannic;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        .SortOfImportantStuff {
+            color: green;
+            font-family: Calibri;
+            font-size: x-large;
+            text-align: center;
+        }
+
+        /*ids always begin with a #  */
+        /*it will look for all elements with id of ChangeButton*/
+        #ChangeButton {
+            background-color: orange;
+        }
+
+        /*for the style below: since there is no # or . - it will look for an HTML element*/
+        /*so all div tags will follow this style*/
+        div {
+            color: blue;
+            font-family: cursive;
+            font-size: medium;
+        }
+
+        #footerStyle {
+            font-family: Lucida Sans;
+            font-size: x-large;
+            color: aqua;
+        }
+        #footerStyle2{
+            font-family: Times New Roman;
+            font-size:large;
+            color:blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <!--all the attributes of an object appear in red:-->
+    <input id="ChangeButton" type="button" value="Change the look of this page." onclick="ChangeThis()" />
+    <h1 class="ImportantStuff">Here we go - let's have some fun.</h1>
+    <p>In case you'd rather be on some much funner web sites:</p>
+    <br />
+    <!--target = "_blank" makes the page open in a new window or tab-->
+    <a href="http://www.cedarpoint.com" target="_blank">Cedar Point</a>
+    <br />
+    <a href="http://www.facebook.com" target="_blank">Face Book</a>
+    <br />
+    <a href="http://www.youtube.com" target="_blank">YouTube</a>
+    <br />
+    <div>
+        <b>Places I'd like to visit:</b>
+        <div>
+            Alaska
+
+            <img src="Images/Alaska.jpg" />
+        </div>
+        <div>
+            Australia
+            <img src="Images/Australia.jpg" />
+        </div>
+        <div>
+            Maine
+            <img src="Images/Maine.jpg" />
+        </div>
+    </div>
+    <span id="test">Maybe someday I'll get to these places.</span>
+    <br />
+    <span id="test2">Until then, I'll just save my money.</span>
+    <script>
+        // Function for everything
+        function ChangeThis()
+            // Changing The Text Color and Background Color
+            {
+            var allparagraphs = document.querySelectorAll("p");
+            for (i = 0; i < allparagraphs.length; i++) {
+                allparagraphs[i].style.color = "yellow";
+                allparagraphs[i].style.background = "aqua";
+            }
+            
+       
+            // Making all the images same size
+            var allimgs = document.querySelectorAll("img");
+            for (i = 0; i < allimgs.length; i++) {
+                allimgs[i].style.width = "250px";
+                allimgs[i].style.height = "200px";
+            }
+
+            // Changing the images Text
+            var imagediv = document.querySelectorAll("div div");
+            for (i = 0; i < imagediv.length; i++) {
+                imagediv[i].style.color = "brown";
+
+            }
+
+            // Appying the class to hyperlinks
+            var hyperlink = document.querySelectorAll("a");
+            for (i = 0; i < hyperlink.length; i++) {
+                hyperlink[i].className = "SortOfImportantStuff";
+            }
+
+            // applying the id to Span Tags
+            var SpTag = document.querySelectorAll("#test");
+            for (i = 0; i < SpTag.length; i++) {
+                SpTag[i].id = "footerStyle";
+            }
+
+            // applying the id to Span Tags
+            var SpTag2 = document.querySelectorAll("#test2");
+            for (i = 0; i < SpTag2.length; i++) {
+                SpTag2[i].id = "footerStyle2";
+            }
+
+            // changing main h1 heading color
+            var fontst = document.querySelectorAll("h1");
+            for (i = 0; i < fontst.length; i++) {
+                fontst[i].style.color = "brown";
+             }
+
+            // Chaning the B tag color
+             var btag = document.querySelectorAll("b");
+            for (i = 0; i < btag.length; i++){
+                btag[i].style.color = "pink";
+            }
+}
+    </script>
+</body>
+</html>
